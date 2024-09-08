@@ -4,9 +4,8 @@ import App from './App.tsx'
 import './index.css'
 
 import {
-  BrowserRouter,
-  createBrowserRouter,
   RouterProvider,
+  createHashRouter,
 } from "react-router-dom";
 import About from './pages/about/About.tsx';
 import Home from './pages/Home/index.ts';
@@ -14,7 +13,7 @@ import Blogs from './pages/Blogs/index.ts';
 import Contact from './pages/contact/index.ts';
 import Services from './pages/services/index.ts';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App/>,
@@ -46,8 +45,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename='/BlogPage'>
      <RouterProvider router={router} />
-    </BrowserRouter>
   </StrictMode>,
 )

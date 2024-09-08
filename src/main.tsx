@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './index.css'
 
 import {
+  BrowserRouter,
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
@@ -15,27 +16,27 @@ import Services from './pages/services/index.ts';
 
 const router = createBrowserRouter([
   {
-    path: "/BlogPage",
+    path: "/",
     element: <App/>,
     children:[
       {
-        path:'/BlogPage',
+        path:'/',
         element: <Home/>
       },
       {
-        path:'/BlogPage/blogs',
+        path:'/blogs',
         element: <Blogs/>
       },
       {
-        path:'/BlogPage/about',
+        path:'/about',
         element: <About/>
       },
       {
-        path:'/BlogPage/contact',
+        path:'/contact',
         element: <Contact/>
       },
       {
-        path:'/BlogPage/services',
+        path:'/services',
         element: <Services/>
       }
     ]
@@ -45,6 +46,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <BrowserRouter basename='/BlogPage'>
      <RouterProvider router={router} />
+    </BrowserRouter>
   </StrictMode>,
 )

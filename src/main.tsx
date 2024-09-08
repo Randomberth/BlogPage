@@ -13,30 +13,29 @@ import Blogs from './pages/Blogs/index.ts';
 import Contact from './pages/contact/index.ts';
 import Services from './pages/services/index.ts';
 
-
 const router = createBrowserRouter([
   {
-    path: "https://Randomberth.github.io/BlogPage/",
+    path: "/BlogPage",
     element: <App/>,
     children:[
       {
-        path:'https://Randomberth.github.io/BlogPage/',
+        path:'/BlogPage',
         element: <Home/>
       },
       {
-        path:'https://Randomberth.github.io/BlogPage/blogs',
+        path:'/BlogPage/blogs',
         element: <Blogs/>
       },
       {
-        path:'https://Randomberth.github.io/BlogPage/about',
+        path:'/BlogPage/about',
         element: <About/>
       },
       {
-        path:'https://Randomberth.github.io/BlogPage/contact',
+        path:'/BlogPage/contact',
         element: <Contact/>
       },
       {
-        path:'https://Randomberth.github.io/BlogPage/services',
+        path:'/BlogPage/services',
         element: <Services/>
       }
     ]
